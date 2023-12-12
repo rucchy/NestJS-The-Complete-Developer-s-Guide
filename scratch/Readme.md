@@ -1,7 +1,17 @@
-Comandos para lanzar la app:
+## Description
 
+Section 1 and 2 of the Udemy course
+
+## Installation
+
+```bash
+$ npm install
 ```
-npx ts-node-dev src/main.ts
+
+## Running the app
+
+```bash
+$ npx ts-node-dev src/main.ts
 ```
 
 URLS:
