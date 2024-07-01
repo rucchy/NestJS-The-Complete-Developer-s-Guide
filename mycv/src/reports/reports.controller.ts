@@ -31,6 +31,6 @@ export class ReportsController {
   @UseGuards(AuthGuard)
   @Serialize(ReportDto)
   getEstimate(@Query() query: GetEstimatetDto) {
-    console.log(query);
+    return this.reportsService.createEstimate(query);
   }
 }
