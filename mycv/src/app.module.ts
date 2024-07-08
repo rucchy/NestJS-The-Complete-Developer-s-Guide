@@ -32,11 +32,13 @@ const cookieSession = require('cookie-session');
   providers: [AppService, { provide: APP_PIPE, useValue: new ValidationPipe({ whitelist: true }) }]
 })
 export class AppModule {
+  constructor(private configService: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
         cookieSession({
-          keys: ['patata']
+          keys: [this.configService.get('COOKIE_KEY')]
         })
       )
       .forRoutes('*');
